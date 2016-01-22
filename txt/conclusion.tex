@@ -1,0 +1,73 @@
+\section{Conclusion}
+Time as a concept is intrinsic to the canvas system proposed by plaimi, as we 
+want to maximise ALT. There are several promising insights available to us by 
+viewing compositions as chronologies. This simple exercise in perspective 
+offers insights that particularly manifest as suggestions we may offer the 
+users based on chronology metadata. Knowing which modules tend to follow 
+others is simply extremely useful. It is also rather conceptually trivial. It 
+does however not directly improve the ALT capabilities of our system per se.
+
+Offering estimation mechanisms in module metadata may alleviate some 
+time-management burdening for our users. It makes it easier for authors to 
+find modules to fit their composition --- particularly if they are making the 
+composition for a situated learning environment in which allocated time must 
+be carefully considered --- and it makes it easier for module end-users to 
+find suitable learning material. Allowing authors to embed man-made 
+estimations as module metadata is a very modest but good extension, but the 
+estimations are educated guesses at best. Furthermore, learning material time 
+estimations depend heavily on the end-user. Therefore an even better extension 
+would be to gather data and do contextual estimation for each user. This is 
+however a very difficult problem.
+
+Spaced repetition is accepted as often leading to higher retention and thus 
+better learning. We could encode spaced repetition metadata in modules and 
+compositions thereof, making our system spaced-repetition-aware, thereby 
+further extending its usefulness and area of application. We could also 
+implement an insight afforded from spaced repetition software --- the notion 
+of self-assessment immediately post-learning. This lets us say useful things 
+related to retainment and assessment regardless of spaced repetition.
+
+Collaborative learning can offer a positive learning effect, but if not done 
+properly this might be antithetical to ALT. Synchronisation for collaboration 
+may be done in realtime, in wait-for-me time, or by timeslots. Realtime 
+collaboration in interactive learning material is an interesting prospect. So 
+is synchronising users at given intervals, especially when combined with a 
+realtime module, e.g.\ evaluation (a quiz or similar) after synchronising the 
+users. Timeslots may be a useful way for especially teachers in classroom 
+settings to ensure that learners have similar progress. These ideas all 
+present difficult problems due to their invasive nature. Further investigation 
+is encouraged to take place in a separate system with learning material 
+optimised for collaboration, which might to some extent marry the advantages 
+of ALT and collaborative learning.
+
+To sum up, the following features should be implemented:
+\begin{itemize*}
+  \item order-awareness for chronology insights,
+  \item author estimation of module length,
+  \item a metadata framework for spaced repetition,
+  \item and post-module self-assessment capabilities.
+\end{itemize*}
+
+These are, not coincidentally, the most modest features proposed in the paper.
+
+The following more invasive changes were discussed:
+
+\begin{itemize*}
+  \item system estimation of module length,
+  \item contextualised (user-customised) estimation of module length,
+  \item spaced-repetition encouraging,
+  \item collaborative realtime module use,
+  \item easy referring to modules and specific elements therein,
+  \item wait-for-me collaboration in which users are periodically synchronised 
+  to the same module,
+  \item timeslot collaboration to ensure that users are somewhat synchronised,
+  \item various combinations and nesting of the proposed synchronisation 
+  methods,
+  \item instructor-integration mechanics for collaborative learning,
+  \item and a sub-system optimised for collaborative learning.
+\end{itemize*}
+
+Further research is encouraged for all of these more invasive features. 
+Collaborative learning is particularly interesting due to the weight of its 
+potential augmentation. It is also particularly difficult due to its potential 
+negative impact on ALT.

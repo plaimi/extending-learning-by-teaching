@@ -1,0 +1,193 @@
+\subsection{Synchronisation}
+\label{synchronisation}
+The canvas system is part of a project dubbed ``Learning by Teaching'', and 
+was originally conceived as a stepping stone towards cultivating learning by 
+teaching, which fosters advantages that do not manifest if the learner relies 
+exclusively on an external teacher in a situated learning 
+environment\cite{cortese2005learning}. Additionally, the canvas was designed 
+to offer an intuitive way of graphically composing e-learning 
+modules\cite{berntsen2015enabling}.
+
+The stepping stone satiated by the canvas is authoring. As such, the canvas 
+can be said to achieve ``learning by authoring'', a process that covers 
+gathering of learning material, and organising. As a result, the canvas 
+software focusses on authors.
+
+However, the compositions that are made on the canvas are only interesting 
+insofar as they are used. We must therefore not neglect the end-users of 
+e-learning in favour of the authors. Although we wish to encourage a learning 
+effect from authoring modules, there will be some pure end-users that do not 
+author anything. When focussing our attention on these end-users, we must 
+consider collaborative learning, as discussion is shown to foster the 
+development of critical thinking\cite{gokhale1995collaborative}.
+
+In the interest of collaboration, mechanisms for synchronising users are 
+desirable. Three suggestions are discussed here;
+\begin{itemize*}
+  \item realtime (synchronous) collaboration,
+  \item wait-for-me collaboration,
+  \item and timeslot collaboration.
+\end{itemize*}
+
+Exploring realtime collaboration offers several specific features. The 
+collaboration may take place on two levels --- using the modules, discussing 
+the modules, or both.
+
+First, let's talk about collaboratively using and discussing modules in 
+realtime. The immediate idea here is akin to Twitch Plays Pokémon, where over 
+a million users for over two weeks voted on what to do at every step of the 
+game \begin{CJK}{UTF8}{min}ポケットモンスター 赤\end{CJK} (Poketto Monsut\={a} 
+Aka, known as Pokémon Red outside of Japan), in a strictly egalitarian manner, 
+whilst discussing the game in a live chat\cite{tpp}. The experiment is a 
+significant phenomenon that demonstrates that social groups are able to unite 
+in social contexts where obstacles are presented\cite{margeltwitch}. The 
+experiment is largely transferable to users of our canvas system, in that 
+there are several modules for which it is possible to have a group of people 
+using them at the same time with e.g.\ the majority vote deciding how they 
+progress. More sophisticated voting mechanisms such as Condorcet may be 
+desirable to provide better overruling heuristics. Discussion may be directly 
+transfered; i.e.\ a regular realtime chat is provided.
+
+There are several ways of making this idea more sophisticated. Users may need 
+to discuss and argue their views as to why e.g.\ one answer in a quiz is 
+correct and others are not, in order to achieve a satisfactory outcome (per 
+some voting heuristic), lest they be prevented from progressing. Discussion 
+may be augmented with features that make it easy to refer to information 
+within a composition. As an example, in a composition where the users are on 
+module three, a quiz, they may wish to refer to module two, an article, to 
+strengthen their argument. In this example the user needs a simple way of 
+accessing previous modules, and a way of easily using them in a discussion.
+
+If the reader is concerned that the idea has become \emph{too} sophisticated 
+now, fear not; there are equally many ways of distilling it down into simpler 
+components. E.g.\ A chat by itself. This modest feature would be a rather 
+large extension of the canvas system. Especially as it was argued against in 
+the original implementation to avoid abusive 
+behaviour\cite{berntsen2015enabling}.
+
+Instead of each participant actively influencing module outcomes, a seat mode 
+may be used. There are several conceivable implementations of this. One is 
+that there is one (somehow elected) person in control all the time, that needs 
+to act on behalf of the group. Another is a hot seat solution in which the 
+seat holder changes based on some heuristic.
+
+Modules that are merely articles or videos or other non-interactive learning 
+material arguably benefit the least from realtime collaboration --- fast 
+readers must wait for slow readers, and that's about it. This is where 
+wait-for-me collaboration becomes useful. The general idea is that there are 
+several synchronisation points where users must become synchronised. In the 
+example above, it would be natural that if module one and two were reading 
+material, these may be pursued independently. There is nothing precluding the 
+joint existence of wait-for-me and realtime mechanics, so that once the users 
+are synchronised, they may use a module --- such as the quiz in module three 
+--- in collaborative realtime. Another useful combination is wait-for-me 
+synchronisation at certain intervals, after which realtime discussion takes 
+place. But wait-for-me mechanics have useful properties when viewed 
+independently as well. One concrete example that is easy to imagine useful is 
+in a largely situated learning environment where it is desirable that all 
+learners possess roughly the same information.
+
+Timeslot collaboration is another useful idea for situated learning 
+environments. It is additionally also useful for learners that want to 
+collaborate across timezones, or following some self-imposed schedule. A 
+timeslot mechanism would entail completing modules in certain timeslots. 
+Teachers often set learning material per class per week in school, and gives 
+homework based on rather tight timeslots, so this is a familiar concept. 
+Again, it may be combined freely with the other two synchronisation methods. 
+It may also be nested. E.g.\ a timeslot to do a module composition wherein 
+wait-for-me mechanics are used for non-interactive learning material, 
+culminating in a real-time quiz and subsequent discussion.
+
+Where naïve wait-for-me moves in the pace of the slowest participant at the 
+risk of alienating the quicker participants, naïve timeslot synchronisation 
+moves at a set pace and risks leaving the slower participants behind. These 
+problems mean that the features may have exactly the opposite of our intended 
+effect, maximising ALT, for some subset of users. Wait-for-me synchronisation 
+needs to consider a method of progressing if one (or more) participants are 
+slowing the group down, whilst timeslots need to consider a way of ensuring 
+that participants are actually learning. Realtime in turn risks virtually all 
+known problems with online social interaction\ldots
+
+Collaborative learning is most effective with an instructor that facilitates 
+learning\cite{gokhale1995collaborative}. It then follows that we should seek 
+to foster learning by instruction in addition to learning by authoring. 
+Marrying the two (i.e.\ users acting as instructors of material they have 
+themselves authored) gets us much closer to learning by teaching proper.
+
+Consequently synchronisation should be extended to encompass instructors as 
+well. There are several ways of achieving this. Instructors may provide 
+realtime feedback whilst a group is going through a module, or discussing it. 
+They may also act as the seat holder, thereby offering a potential solution to 
+any social problems.
+
+This entire section has a certain latent conjecture hanging over it: 
+Synchronous collaboration is mostly interesting in a (semi) situated learning 
+environment. However, this environment needn't be a classroom setting. It just
+needs to be facilitated in the system that surrounds the canvas. Study groups 
+or a similar mechanism in which learners may organise may be added, including 
+potentially a matchmaking system, and a forum for getting in touch with 
+potential collaborators. All of which are major undertakings and nigh-complete 
+transformations of the original concept --- this isn't to be taken lightly.
+
+Another problem with uncoordinated collaborators is the possibility of 
+upsetting the precarious ALT by effectively making each collaborator adapt to 
+each other. This could potentially result in every single collaborator 
+following a sub-optimal pace, thereby harming the chances of achieving ALT, 
+making this a negative feature rather than positive. Well put-together study 
+groups alleviate this slightly, but not completely.
+
+We elect not to explore potential implementation problems in detail in this 
+section. Just like the core repetition idea discussed in 
+Section~\ref{repetition}, the ideas presented here are of such a magnitude as 
+to warrant completely new user experience research. However, it is noteworthy 
+that nothing discussed in this section is fundamentally difficult from a 
+technological perspective. The user-interface and -experience design 
+challenges are far greater (though not insurmountable).
+
+Like we concluded with spaced repetition, it is entirely plausible that 
+synchronous collaboration is best left to another system which augments the 
+canvas. It may also be suitable as a special part of some expanded system, 
+wherein the learning material itself is optimised for a collaborative premise. 
+Collaborative material which enables critical thinking and discussion are 
+likely to be more successful than users attempting to collaborate on material 
+not designed with collaboration in mind.
+
+With learning material optimised for collaboration, it is possible to 
+approximate real world tasks to a higher degree. As an example, consider the 
+software engineering composition visualised in Figure~\ref{collabcanvas}. Let 
+$A$ and $B$ be the participants of this canvas. Let $a$, $b$, $c$, and $d$, be 
+modules. Let $a \to b$ and $b \to d$ be flows unique to $A$, and $a \to c$ and 
+$c \to d$ unique to $B$. The topic might be compilers. $a$ might be an 
+introduction to compilers, then $b$ can be an introduction to frontend 
+(lexing, parsing, etc.), and $c$ an introduction to backend (assembling, 
+code-generation, etc.), and finally $d$ can be a quiz about both front- and 
+backend fundamentals. This models real world collaboration in a sense. It is 
+not unusual to divide up tasks like this in software engineering. The quiz 
+might now be a realtime collaborative task in which the $A$ and $B$ must rely 
+on each others' knowledge in order to pass it. Through this process, it is 
+plausible that $A$ will learn about compiler backends, and that conversively 
+$B$ will learn about compiler frontends.
+
+\begin{figure}[H]
+\begin{centering}
+\begin{tikzpicture}[node distance = 6 em, auto]
+\node(a){a};
+\node[right of = a](i){};
+\node[above of = i](b){b};
+\node[below of = i](c){c};
+\node[right of = i](d){d};
+
+\draw[cyan,thick,->](a) -- (b);
+\draw[pink,thick,->](a) -- (c);
+\draw[cyan,thick,->](b) -- (d);
+\draw[pink,thick,->](c) -- (d);
+\end{tikzpicture}
+\caption{A canvas optimised for collaboration}
+\label{collabcanvas}
+\end{centering}
+\end{figure}
+
+The interactive nature of our canvas makes collaborative learning a natural 
+fit. But the original design did not consider collaborative learning, and as 
+such the augmentation must be considered too great to be done recklessly. User 
+experience research is thus thoroughly recommended, and indeed necessary.

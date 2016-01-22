@@ -1,0 +1,58 @@
+\subsection{Repetition}
+\label{repetition}
+The law of recency states that learning degrades over time, and the law of 
+exercise says that learning is increased through 
+repetition\cite{murphy2011games}. A common solution to this problem is 
+discussed in the paper that initially proposed the 
+canvas\cite{berntsen2015enabling}, namely spaced repetition (combined with 
+testing); i.e.\ studying across several separated sessions in time rather than 
+spending the same amount of time in a single session.
+
+This often leads to higher retention, and is one of the most reliable findings 
+in human learning research (echoed in hundreds of studies, the first of which 
+dating to the 1800s). It has been predictably demonstrated in both children 
+and adults, and for both trivial knowledge (simple facts) as well as advanced 
+concepts\cite{carpenter2012using}. It has also been shown to be beneficial in 
+realistic (applied) contexts\cite{sobel2011spacing, carpenter2012using}.
+
+As we've already discussed\cite{berntsen2015enabling}, spaced repetition with 
+testing is a credible learning method, and thus appealing feature to include 
+in our canvas. The initial canvas system was nevertheless designed without an 
+emphasis on spaced repetition, in order to provide a more general framework. 
+Spaced repetition is usually provided for rather specific and well-defined 
+knowledge (translate this word to German, solve this equation for x, etc.), 
+and arguably makes less sense for a news article leading up to a discussion. 
+The canvas is merely a way to glue things together, where ``things'' is an 
+ever so broad term. Another issues is that finding the optimal spacing gap is 
+notoriously difficult, and inherently contextual (there is no 
+``one-size-fits-all'' solution)\cite{carpenter2012using}.
+
+As it stands, centering the entirety of the canvas's design on spaced 
+repetition is unlikely. But it is altogether conceivable to augment it with a 
+separate system specialising in spaced repetition. As an example, there is 
+nothing that precludes the canvas from facilitating a system which focusses on 
+spaced repetition.
+
+The modules and compositions thereof would need metadata tailored to the 
+spaced repetition model of learning, but this is not in itself a difficult 
+task. The amount of work to at the very least be natively 
+spaced-repetition-aware is very low, and the benefits may be 
+disproportionately high for systems that may want to use the canvas system. 
+Consequently, it is likely a good idea to make at least that much effort.
+
+The next level of effort would be to include a way for learners to self-assess 
+retention, in a manner similar to what
+Anki\footnote{\url{https://ankiweb.net/about}} and similar programs do. There 
+must be a way to mark a module as spaced-repetition-aware, which will then let 
+the user self-assess its learning effect at the end of it. This is a feature 
+which is useful regardless of spaced repetition, as we are now able to say 
+something about our users' retention level based on self-assessment. By 
+extension we can say something about the retention success of modules. It 
+trivially also follows that we may say something about assessment, both from 
+the perspective of a user, and of a module. Assessment can be made into an 
+interactive and engaging affair through our system's avatar 
+feature\cite{berntsen2015enabling}.
+
+The final step is to actually encourage repeating somehow. This is likely out 
+of scope for our system for now. There is however, as mentioned, nothing 
+precluding an external system from augmenting our system with this.

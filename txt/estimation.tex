@@ -1,0 +1,97 @@
+\subsection{Estimation}
+\label{estimation}
+In Section~\ref{chronology}, modules are considered in relation to each other. 
+Thus everything is happy days. However, in this section we consider estimating 
+the time a module takes, which proves to be a quite complicated endeavour.
+
+Being able to estimate the time a module takes to complete is useful for the 
+author of the module and the module users both. This would be a conservative 
+augmentation both in terms of technical and philosophical impact, making it 
+perhaps \emph{less interesting} than other prospects explored in this paper, 
+but at the same time perhaps all the more immediately useful.
+
+It is easy to conceive of the practical aspects of this idea. There are two 
+levels to it. First, let authors of modules estimate the amount of time a 
+module will take, and store it as module metadata. The design changes involved 
+are quite small, the programming required is minuscule.
+
+There is some benefit to this, but the obvious issue is that the estimator 
+might be wrong. It may be wrong in several ways for several reasons. 
+Conceivably the estimation reflects what the author is aiming for rather than 
+what the author has actually achieved. To put it simply: they might be wrong.
+
+The next logical step then becomes to accumulate how much time users 
+\emph{actually} spend. This is more complicated to implement, but not 
+\emph{too} complicated. We will require client-side executable code to achieve 
+this, which means that any prevention of such code will prevent us from 
+gathering useful data. This is not too worrying as there will be little reason 
+for users to prevent this code from running, meaning that few users will do 
+so. When viewed in isolation, the performance penalties of this code will be 
+negligible.
+
+But there are several weaknesses to the metric itself. Naïvely accumulating 
+how long a user spends on a particular website results in a plethora of 
+useless data. Two easily imagined extrema are users leaving a website up for a 
+very long time, and users immediately leaving the website. It is similarly 
+easy to imagine why this would happen. As one example of each: 1. Consider a 
+primary school pupil visiting a website during the very end of instruction 
+time, and leaving it up until the next instruction time (e.g.\ visiting it at 
+the end of Friday, and leaving it up through the weekend). 2. Consider a user 
+visiting the wrong website and immediately leaving it.
+
+Accounting for those specific problems is non-trivial. Normally, a standard 
+deviation cut-off would suffice adequately, but in our case we are faced with 
+something like a tri-modal distribution. Maybe it's a leptokurtic 
+distribution. That would be nice. But unfortunately, it might be, or it might 
+not be. That's a lot worse. And it's about to get worse. Because it might be 
+leptokurtic, and then it might change into a fat-headed distribution. And then 
+it might reverse back again. And then it might become heavy-tailed. Etc. The 
+modules might even have different distributions (that change as more people 
+visit them.) If you have a leptokurtic distribution in two modules, a 
+heavy-tailed distributed module, and two fat-headed and fat-tailed 
+distributions, what then of the composition of these five modules? What then 
+when the third becomes leptokurtic and the fourth becomes heavy-tailed? Doing 
+this properly is not going to be trivial.
+
+Are we having fun yet? Because it's about to get even more fun. Consider 
+having a quiz about monoids in semigroup theory. The author estimates it to 
+take $n$ minutes. A primary school student and a maths postgraduate go through 
+the quiz. The estimation can in this situation be wrong in two ways --- too 
+short and too long. This raises the question --- is the estimation in general 
+useful at all?
+
+So then the next step is to tie estimation to knowledge. I.e.\ we need to know 
+how much the user knows about something, and derive estimations based on how 
+much similarly knowledgeable users know about the same thing. This is 
+non-trivial enough to not warrant any more examples. The observant reader 
+``gets the picture'', as it were.
+
+Let's take a step back before we end up with a horror story instead of a 
+paper. Let's look at the benefits and opportunities afforded to us by 
+implementing this.
+
+Authors may receive useful analytics regarding their modules. Some banal 
+analytics are ``users are spending longer on this module than you thought they 
+would'', and ``these modules in your composition are approximately of the same 
+length, but this fourth one takes a lot longer''. The former suffers from the 
+context problem, but the latter is actually rather pleasant. Indeed most 
+things we can say about one module in relation to some other modules in the 
+same composition is usually immediately useful without a Ph.D in statistics.
+
+While module authors are rewarded with feedback, module users are provided 
+with useful information on how they want to spend their time, which makes our 
+system interrupt flow more seldom. Users may search for modules and 
+compositions based on time estimates. The same benefit applies to indirect 
+users. E.g.\ classroom teachers might search for the compositions that yields 
+the highest ALT to allocated time ratio.
+
+Module authors can be said to be module users as well, in that they will often 
+remix modules, and they benefit in a similar manner to module users. They can 
+e.g.\ search for modules that fit their estimated composition length.
+
+To make estimates useful for users (including indirect users and remixers) the 
+programmer needs a statistics Ph.D or so to deal with transforming the data, 
+and then contextualising it. To make estimates useful for authors, they will 
+likely need a Ph.D themselves. We should however try our best to help them 
+make sense of it. Perhaps authors should have to complete an introduction to 
+statistics composition before being able to access their analytics.

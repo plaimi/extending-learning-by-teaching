@@ -1,0 +1,87 @@
+%\documentclass[twoside]{article}
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{CJKutf8}
+
+\linespread{1.05}
+\usepackage{microtype}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{environ}
+\usepackage{pdfpages}
+\usepackage{mdwlist}
+% Environment to scale things
+\NewEnviron{scale}[1]{%
+  \begin{tikzpicture}
+    \node[scale=#1]{%
+      \BODY
+    };
+  \end{tikzpicture}
+}
+
+% Make ToC less imposing
+% \setcounter{tocdepth}{1}
+
+% Margins
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry}
+% Two-column layout
+\usepackage{multicol}
+% Custom captions
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}
+% Horizontal rules for tables
+\usepackage{booktabs}
+% Table & figure positioning.
+\usepackage{float}
+% Hyperlinks
+\usepackage[colorlinks,citecolor=blue]{hyperref}
+% Source code
+\usepackage{listings}
+% Maths mode stuff
+\usepackage{amsmath}
+
+% Abstract customization
+\usepackage{abstract}
+% Bold "Abstract"
+\renewcommand{\abstractnamefont}{\normalfont\bfseries}
+% Italic abstract
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+
+% Custom titles
+\usepackage{titlesec}
+% Custom section titles
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{}
+% Custom subsection titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{}
+
+% Document title
+\title{\vspace{-15mm}\fontsize{16pt}{10pt}\selectfont
+\textbf{Extending the Learning by Teaching Canvas System: Maximising Academic 
+Learning Time}}
+
+% Document authors
+\author{\begin{tabular}{c c c}
+    Alexander Berntsen \\
+    \href{mailto:alexander@plaimi.net}{alexander@plaimi.net}
+\end{tabular}
+}
+
+\graphicspath{{fig/}}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent \input{txt/abstract}
+\end{abstract}
+\tableofcontents
+\listoffigures
+\newpage
+\begin{multicols}{2}
+    \input{txt/main}
+\end{multicols}
+\bibliography{paper}
+\bibliographystyle{unsrt}
+\newpage
+\end{document}
